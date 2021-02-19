@@ -8,7 +8,7 @@ import ru.itsjava.service.ProgrammerService;
 import ru.itsjava.service.ProgrammerServiceImpl;
 
 @Configuration
-public class Myconfig {
+public class MyConfig {
 
     @Bean
     public NotebookService noteService(){
@@ -18,6 +18,8 @@ public class Myconfig {
     @Bean
     public ProgrammerService programmerService(NotebookService notebookService){
         return new ProgrammerServiceImpl(notebookService);
+
+        // что тут происходит? тип возвращаемого значения?
     }
 
 }

@@ -10,6 +10,7 @@
 
     <bean id="programmerService" class="ru.itsjava.service.ProgrammerServiceImpl">
         <constructor-arg ref="noteService"/>
+    <!--тут создали зависимость от конструктора? -->
     </bean>
 
     <!-- more bean definitions go here -->

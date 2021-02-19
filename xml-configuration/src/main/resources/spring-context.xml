@@ -4,12 +4,13 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         https://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="noteService" class="ru.NotebookServiceImpl">
+    <bean id="noteService" class="ru.itsjava.service.NotebookServiceImpl">
         <!-- collaborators and configuration for this bean go here -->
     </bean>
 
-    <bean id="programmerService" class="ru.ProgrammerServiceImpl">
+    <bean id="programmerService" class="ru.itsjava.service.ProgrammerServiceImpl">
         <constructor-arg ref="noteService"/>
+    <!--тут создали зависимость от конструктора? -->
     </bean>
 
     <!-- more bean definitions go here -->

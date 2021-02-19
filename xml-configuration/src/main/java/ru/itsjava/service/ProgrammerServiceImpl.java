@@ -2,11 +2,17 @@ package ru.itsjava.service;
 
 import lombok.RequiredArgsConstructor;
 
-@RequiredArgsConstructor
+
 public class ProgrammerServiceImpl implements ProgrammerService{
-private final  NotebookService notebookService;
 
 
+
+    private final  NotebookService notebookService;
+
+    public ProgrammerServiceImpl(NotebookService notebookService) { // передача парметров???
+        this.notebookService = notebookService;
+
+    }
 
     @Override
     public void printItems() {
