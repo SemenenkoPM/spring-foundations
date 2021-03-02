@@ -17,18 +17,17 @@ public class LoggingAspect {
         System.out.println("Log before " + joinPoint.getSignature().getName());
     }
 
-    @After("execution (* ru.itsjava.dao.*.*(..))")
+    @After("execution (* ru.itsjava.dao.FilmDao.getFilmById(..))")
     public void logAfter(JoinPoint joinPoint) {
         System.out.println("Log after " + joinPoint.getSignature().getName());
     }
 
-//    @Around("execution (* ru.itsjava.service.FilmService.getById())")
-//    public Object logAround(ProceedingJoinPoint joinPoint) throws Throwable {
-//        System.out.println("Log around " + joinPoint.getSignature().getName());
-//        Object res = joinPoint.proceed();
-//        System.out.println("Log around " + joinPoint.getSignature().getName());
-//        return res;
-//
-//    }
+    @Around("execution (* ru.itsjava.service.FilmService.*(.. ))")
+    public Object logAround(ProceedingJoinPoint joinPoint) throws Throwable {
+        System.out.println("Log around " + joinPoint.getSignature().getName());
+        Object res = joinPoint.proceed();
+        System.out.println("Log around " + joinPoint.getSignature().getName());
+        return res;
 
+    }
 }
