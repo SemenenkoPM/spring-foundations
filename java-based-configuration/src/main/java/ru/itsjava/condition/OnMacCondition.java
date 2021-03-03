@@ -9,6 +9,7 @@ import javax.swing.*;
 public class OnMacCondition implements Condition {
     @Override
     public boolean matches(ConditionContext conditionContext, AnnotatedTypeMetadata annotatedTypeMetadata) {
-        return JOptionPane.showConfirmDialog(null, "Is it mac?") == 0;
+//        return JOptionPane.showConfirmDialog(null, "Is it mac?") == 0;
+        return false;
     }
 }
